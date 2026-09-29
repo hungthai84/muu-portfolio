@@ -11,6 +11,7 @@ const LINKS = [
   { href: "#employment", label: "kinh nghiệm" },
   { href: "#portfolio", label: "dự án" },
   { href: "#awards", label: "giải thưởng" },
+  { href: "#blog", label: "blog" },
   { href: "#contact", label: "liên hệ" },
 ];
 
