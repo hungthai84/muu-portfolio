@@ -1,0 +1,11 @@
+export { default as Header } from "./Header";
+export { default as HomeSlide } from "./HomeSlide";
+export { default as AboutSlide } from "./AboutSlide";
+export { default as SkillsSlide } from "./SkillsSlide";
+export { default as EducationSlide } from "./EducationSlide";
+export { default as EmploymentSlide } from "./EmploymentSlide";
+export { default as PortfolioSlide } from "./PortfolioSlide";
+export { default as AwardSlide } from "./AwardSlide";
+export { default as BlogSlide } from "./BlogSlide";
+export { default as ContactSlide } from "./ContactSlide";
+export { default as IndicationArrows } from "./IndicationArrows";
