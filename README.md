@@ -1,13 +1,15 @@
 # MUU Portfolio — Next.js
 
-Website portfolio / CV chuyển từ HTML tĩnh sang **Next.js 14 (App Router)**.
+Chuyển đổi từ **`index.html`** (template MUU CV/Portfolio) sang **Next.js 14 (App Router)**.
+
+Nguồn gốc: file HTML một trang (slideshow jQuery) → React components, CSS Glassmorphism, theme sáng/tối.
 
 ## Tính năng
 
 - Glassmorphism (sáng / tối)
 - Font Play
 - Header trong suốt + menu + nút đổi theme
-- Các section: Trang chủ, Về tôi, Kỹ năng, Học vấn, Kinh nghiệm, Dự án, Giải thưởng, Liên hệ
+- Các section từ `index.html`: Trang chủ, Về tôi, Kỹ năng, Học vấn, Kinh nghiệm, Dự án, Giải thưởng, Blog, Liên hệ
 - Nội dung tiếng Việt
 
 ## Chạy dự án
@@ -34,7 +36,7 @@ muu-portfolio/
 ├── app/
 │   ├── globals.css      # Glassmorphism + theme tokens
 │   ├── layout.js        # Root layout + ThemeProvider
-│   └── page.js          # Trang chủ (các section)
+│   └── page.js          # Trang chủ (các section từ index.html)
 ├── components/
 │   ├── Header.js        # Header + menu + theme toggle
 │   └── ThemeProvider.js # Context sáng/tối
