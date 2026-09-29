@@ -1,16 +1,31 @@
-# MUU Portfolio — Next.js
+# MUU Portfolio – Next.js (Component Architecture)
 
-Chuyển đổi từ **`index.html`** (template MUU CV/Portfolio) sang **Next.js 14 (App Router)**.
+Website portfolio/resume template **MUU** đã được chuyển sang **Next.js 14 App Router** và tách thành các React component chi tiết.
 
-Nguồn gốc: file HTML một trang (slideshow jQuery) → React components, CSS Glassmorphism, theme sáng/tối.
+## Cấu trúc components
 
-## Tính năng
+```
+components/
+├── Header.tsx           # Logo + Navigation menu
+├── HomeSlide.tsx        # Slider giới thiệu (3 sub-slides)
+├── AboutSlide.tsx       # About me + thông tin cá nhân
+├── SkillsSlide.tsx      # Skills intro + progress bars + counters
+├── EducationSlide.tsx   # Học vấn
+├── EmploymentSlide.tsx  # Kinh nghiệm làm việc
+├── PortfolioSlide.tsx   # Portfolio filter + gallery + popups
+├── AwardSlide.tsx       # Awards + chi tiết giải thưởng
+├── BlogSlide.tsx        # Blog posts
+├── ContactSlide.tsx     # Contact form + địa chỉ
+├── IndicationArrows.tsx # Navigation arrows
+└── index.ts             # Barrel export
+```
 
-- Glassmorphism (sáng / tối)
-- Font Play
-- Header trong suốt + menu + nút đổi theme
-- Các section từ `index.html`: Trang chủ, Về tôi, Kỹ năng, Học vấn, Kinh nghiệm, Dự án, Giải thưởng, Blog, Liên hệ
-- Nội dung tiếng Việt
+```
+app/
+├── layout.tsx   # Metadata + CSS/JS CDN ThemeZaa
+├── page.tsx     # Compose tất cả components
+└── globals.css
+```
 
 ## Chạy dự án
 
@@ -20,26 +35,19 @@ npm install
 npm run dev
 ```
 
-Mở [http://localhost:3000](http://localhost:3000).
+Mở: http://localhost:3000
 
-## Build production
+## Đặc điểm
+
+- **Giữ nguyên className** của template gốc → CSS + jQuery plugins vẫn hoạt động.
+- Mỗi section là 1 component độc lập, dễ chỉnh sửa nội dung.
+- `app/page.tsx` chỉ compose các component, rất gọn.
+
+## Unit Tests
 
 ```bash
-npm run build
-npm start
+npm test
+npm run test:coverage
 ```
 
-## Cấu trúc
-
-```
-muu-portfolio/
-├── app/
-│   ├── globals.css      # Glassmorphism + theme tokens
-│   ├── layout.js        # Root layout + ThemeProvider
-│   └── page.js          # Trang chủ (các section từ index.html)
-├── components/
-│   ├── Header.js        # Header + menu + theme toggle
-│   └── ThemeProvider.js # Context sáng/tối
-├── package.json
-└── next.config.js
-```
+Jest + React Testing Library với 11 file test cho toàn bộ components.
